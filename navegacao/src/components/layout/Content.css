@@ -1,6 +1,6 @@
 .Content {
     display: flex;
     flex-grow: 1;
-    background-color: #cdcdcd;
+    background-color: black;
     padding: 30px;
 }

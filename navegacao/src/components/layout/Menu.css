@@ -2,7 +2,7 @@
     display: flex;
     flex-basis: 250px;
 
-    background-color: #1e90ff;
+    background-color: red;
 }
 
 .Menu nav {
@@ -29,5 +29,5 @@
 }
 
 .Menu li a:hover {
-    background: #00000020;
+    background: white;
 }

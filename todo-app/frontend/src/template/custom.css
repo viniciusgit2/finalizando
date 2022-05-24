@@ -4,7 +4,7 @@
 
 .markedAsDone {
     text-decoration: line-through;
-    color: #777;
+    color: rgb(119, 119, 119);
 }
 
 .tableActions {

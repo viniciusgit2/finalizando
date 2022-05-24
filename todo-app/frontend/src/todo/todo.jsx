@@ -4,7 +4,7 @@ import PageHeader from '../template/pageHeader'
 import TodoForm from './todoForm'
 import TodoList from './todoList'
 
-export default props => (
+export default () => (
     <div>
         <PageHeader name='Tarefas' small='Cadastro'></PageHeader>
         <TodoForm />

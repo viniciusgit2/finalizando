@@ -1,12 +1,12 @@
-const BillingCycle = require('./billingCycle')
-const errorHandler = require('../common/errorHandler')
+import BillingCycle, { methods, updateOptions, after, route, count, aggregate } from './billingCycle'
+import errorHandler from '../common/errorHandler'
 
-BillingCycle.methods(['get', 'post', 'put', 'delete'])
-BillingCycle.updateOptions({new: true, runValidators: true})
-BillingCycle.after('post', errorHandler).after('put', errorHandler)
+methods(['get', 'post', 'put', 'delete'])
+updateOptions({new: true, runValidators: true})
+after('post', errorHandler).after('put', errorHandler)
 
-BillingCycle.route('count', (req, res, next) => {
-    BillingCycle.count((error, value) => {
+route('count', (req, res, next) => {
+    count((error, value) => {
         if(error) {
             res.status(500).json({errors: [error]})
         } else {
@@ -15,8 +15,8 @@ BillingCycle.route('count', (req, res, next) => {
     })
 })
 
-BillingCycle.route('summary', (req, res, next) => {
-    BillingCycle.aggregate({
+route('summary', (req, res, next) => {
+    aggregate({
         $project: {credit: {$sum: "$credits.value"}, debt: {$sum: "$debts.value"}}
     }, {
         $group: {_id: null, credit: {$sum: "$credit"}, debt: {$sum: "$debt"}}
@@ -31,4 +31,4 @@ BillingCycle.route('summary', (req, res, next) => {
     })
 })
 
-module.exports = BillingCycle
+export default BillingCycle

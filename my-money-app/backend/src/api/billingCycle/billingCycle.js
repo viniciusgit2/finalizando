@@ -1,5 +1,5 @@
-const restful = require('node-restful')
-const mongoose = restful.mongoose
+import { mongoose as _mongoose, model } from 'node-restful'
+const mongoose = _mongoose
 
 const creditSchema = new mongoose.Schema({
     name: { type: String, required: true },
@@ -21,4 +21,4 @@ const billingCycleSchema = new mongoose.Schema({
     debts: [debtSchema]
 })
 
-module.exports = restful.model('BillingCycle', billingCycleSchema)
+export default model('BillingCycle', billingCycleSchema)

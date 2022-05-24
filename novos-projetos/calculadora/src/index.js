@@ -6,7 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
     <div>
-        <h1>Calculadora</h1>
+        <h1>Calculadora modificada</h1>
         <Calculator />
     </div>
 , document.getElementById('root'));

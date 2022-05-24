@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { applyMiddleware, createStore } from 'redux'
 import { Provider } from 'react-redux'
-
-import promise from 'redux-promise'
+import { applyMiddleware, createStore } from 'redux'
 import multi from 'redux-multi'
+import promise from 'redux-promise'
 import thunk from 'redux-thunk'
-
 import App from './main/app'
 import reducers from './main/reducers'
+
+
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ 
     && window.__REDUX_DEVTOOLS_EXTENSION__()
